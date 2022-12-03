@@ -1,6 +1,5 @@
 #! /usr/bin/env python
-# -*- coding: utf-8 -*-
-# vim: set et sw=4 fenc=utf-8: 
+
 """
 .. module:: agi
    :synopsis: This module contains functions and classes to implment AGI scripts in python. 
@@ -151,7 +150,7 @@ class AGI:
         except IOError as e:
             if e.errno == 32:
                 # Broken Pipe * let us go
-                raise AGISIGPIPEHangup("Received SIGPIPE")
+                raise AGISIGPIPEHangup("Received SIGPIPE") from e
             else:
                 raise
 

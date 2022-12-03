@@ -1,3 +1,6 @@
-include CHANGELOG
-include README.rst
-include MANIFEST.in
+graft docs
+graft tests
+
+include README.rst CHANGELOG tox.ini
+
+global-exclude *~ *.py[cod]

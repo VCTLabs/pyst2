@@ -14,7 +14,7 @@ Specification
 """
 
 import sys
-import SocketServer
+import socketserver
 import asterisk.agi
 # import pkg_resources
 # PYST_VERSION = pkg_resources.get_distribution("pyst2").version
@@ -24,7 +24,7 @@ __verison__ = 0.1
 #TODO: Read options from config file.
 HOST, PORT = "127.0.0.1", 4573
 
-class FastAGI(SocketServer.StreamRequestHandler):
+class FastAGI(socketserver.StreamRequestHandler):
     # Close connections not finished in 5seconds.
     timeout = 5
     def handle(self):
@@ -33,16 +33,16 @@ class FastAGI(SocketServer.StreamRequestHandler):
             agi.verbose("pyst2: FastAGI on: {}:{}".format(HOST, PORT))
         except TypeError as e:
             sys.stderr.write('Unable to connect to agi://{} {}\n'.format(self.client_address[0], str(e)))
-        except SocketServer.socket.timeout as e:
+        except socketserver.socket.timeout as e:
             sys.stderr.write('Timeout receiving data from {}\n'.format(self.client_address))
-        except SocketServer.socket.error as e:
+        except socketserver.socket.error as e:
             sys.stderr.write('Could not open the socket. Is someting else listening on this port?\n')
         except Exception as e:
             sys.stderr.write('An unknown error: {}\n'.format(str(e)))
 
 if __name__ == "__main__":
-    # server = SocketServer.TCPServer((HOST, PORT), FastAGI)
-    server = SocketServer.ForkingTCPServer((HOST, PORT), FastAGI)
+    # server = socketserver.TCPServer((HOST, PORT), FastAGI)
+    server = socketserver.ForkingTCPServer((HOST, PORT), FastAGI)
 
     # Keep server running until CTRL-C is pressed.
     server.serve_forever()

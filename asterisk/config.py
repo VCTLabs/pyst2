@@ -168,14 +168,13 @@ class Config(object):
                 if cat:
                     cat.comments.append(item)
                 continue
-            elif line[0] == '[':
+            if line[0] == '[':
                 cat = Category(line, num)
                 self.lines.append(cat)
                 self.categories.append(cat)
                 continue
-            else:
-                item = Item(line, num)
-                self.lines.append(item)
-                if cat:
-                    cat.append(item)
-                continue
+            item = Item(line, num)
+            self.lines.append(item)
+            if cat:
+                cat.append(item)
+            continue
