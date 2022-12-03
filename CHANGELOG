@@ -1,7 +1,8 @@
 2019-08-08  Francesco Rana <https://github.com/c1cc10>
 
     * Fixed send_command to work with python3 (by evilscientress )
-	* changed 'async' option name in manager.py due to the updated reserved words list in Python 3
+	* changed 'async' option name in manager.py due to the updated
+	  reserved words list in Python 3
 
 2016-11-04  VoiPCS <https://github.com/VoIPCS>
 
@@ -93,7 +94,7 @@
 
 	* TODO: Updated.
 	* asterisk/agi.py (AGI.control_stream_file): Changed default skipms
-	and quoted arguments.
+	  and quoted arguments.
 
 2006-10-24  Matthew Nicholson  <mnicholson@digium.com>
 
@@ -102,12 +103,12 @@
 2006-10-18  Matthew Nicholson  <mnicholson@digium.com>
 
 	* asterisk/agitb.py: Make error output default to sys.stderr instead
-	of sys.stdout.
+	  of sys.stdout.
 
 2006-09-19  Matthew Nicholson  <mnicholson@digium.com>
 
 	* debian/control: Removed XS-Python-Versions header to make it default
-	to all python versions.
+	  to all python versions.
 
 2006-09-19  Matthew Nicholson  <mnicholson@digium.com>
 
@@ -143,14 +144,14 @@
 2006-07-14  Matthew Nicholson  <mnicholson@digium.com>
 
 	* asterisk/agi.py (wait_for_digit): Only catch ValueError, not all
-	exceptions.
+	  exceptions.
 
 2006-07-14  Matthew Nicholson  <mnicholson@digium.com>
 
 	* TODO: Updated.
 	* asterisk/agi.py (set_variable): Documentation changes.
 	* asterisk/agi.py (get_variable): Changed to return and empty string
-	instead of throwing an exception when a channel variable is not set.
+	  instead of throwing an exception when a channel variable is not set.
 	* UPGRADE: Added.
 
 2006-07-14  Matthew Nicholson  <mnicholson@digium.com>

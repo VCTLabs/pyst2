@@ -30,32 +30,33 @@ Meta
 - Site: http://www.rdegges.com
 - Status: *looking for maintainer*, active
 
-**NOTE**: This project is now mantained by Francesco Rana. 
-Please be patient because I'm not used to the job yet, but I'll do my best.
-Many and infinite thanks to Randall Degges for his wonderful work. I'm actually using the
-library in some project of mine, so I'm more than happy to help and push it further if I can.
-I'm happy to accept pull requests and cut releases as needed.
-If you want to contribute to the project, please do!
+**NOTE**: This project is now mantained by Francesco Rana.
+Please be patient because I'm not used to the job yet, but I'll do my
+best. Many and infinite thanks to Randall Degges for his wonderful
+work. I'm actually using the library in some project of mine, so I'm
+more than happy to help and push it further if I can. I'm happy to
+accept pull requests and cut releases as needed. If you want to
+contribute to the project, please do!
 
 
 Purpose
 -------
 
-pyst2 consists of a set of interfaces and libraries to allow programming of
-Asterisk from python. The library currently supports AGI, AMI, and the parsing
-of Asterisk configuration files. The library also includes debugging facilities
-for AGI.
+pyst2 consists of a set of interfaces and libraries to allow
+programming of Asterisk from python. The library currently supports
+AGI, AMI, and the parsing of Asterisk configuration files. The library
+also includes debugging facilities for AGI.
 
-This project has been forked from pyst (http://sf.net/projects/pyst/) because
-it was impossible for me to contact the project maintainer (after several
-attempts), and I'd like to bring the project up-to-date, fix bugs, and make
-it more usable overall.
+This project has been forked from pyst (http://sf.net/projects/pyst/)
+because it was impossible for me to contact the project maintainer
+(after several attempts), and I'd like to bring the project up-to-date,
+fix bugs, and make it more usable overall.
 
 My immediate plans include adding full documentation, re-writing some
 of the core routines, adding a test suite, and accepting pull requests.
 
-If you are one of the current maintainers, and would like to take over the
-fork, please contact me: r@rdegges.com, so we can get that setup!
+If you are one of the current maintainers, and would like to take over
+the fork, please contact me: r@rdegges.com, so we can get that setup!
 
 
 Installation

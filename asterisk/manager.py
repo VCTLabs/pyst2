@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# vim: set expandtab shiftwidth=4:
-
 """
 .. module:: manager
    :synopsis: Python Interface for Asterisk Manager
@@ -12,71 +9,76 @@ Example
 
 .. code-block:: python
 
-   import asterisk.manager
-   import sys
+    import sys
+    from asterisk.manager import Manager
 
-   def handle_shutdown(event, manager):
-      print "Recieved shutdown event"
-      manager.close()
-      # we could analize the event and reconnect here
 
-   def handle_event(event, manager):
-      print "Recieved event: %s" % event.name
+    def handle_shutdown(event, manager):
+        print("Received shutdown event")
+        manager.close()
+        # we could analyze the event and reconnect here
 
-   manager = asterisk.manager.Manager()
-   try:
-       # connect to the manager
-       try:
-          manager.connect('host')
-          manager.login('user', 'secret')
 
-           # register some callbacks
-           manager.register_event('Shutdown', handle_shutdown) # shutdown
-           manager.register_event('*', handle_event)           # catch all
+    def handle_event(event, manager):
+        print("Received event: %s" % event.name)
 
-           # get a status report
-           response = manager.status()
 
-           manager.logoff()
-       except asterisk.manager.ManagerSocketException as e:
-          print "Error connecting to the manager: %s" % e.strerror
-          sys.exit(1)
-       except asterisk.manager.ManagerAuthException as e:
-          print "Error logging in to the manager: %s" % e.strerror
-          sys.exit(1)
-       except asterisk.manager.ManagerException as e:
-          print "Error: %s" % e.strerror
-          sys.exit(1)
+    manager = Manager()
+    try:
+        # connect to the manager
+        try:
+            manager.connect("host")
+            manager.login("user", "secret")
 
-   finally:
-      # remember to clean up
-      manager.close()
+            # register some callbacks
+            manager.register_event(
+                "Shutdown", handle_shutdown
+            )  # shutdown
+            manager.register_event("*", handle_event)  # catch all
+
+            # get a status report
+            response = manager.status()
+            manager.logoff()
+        except asterisk.manager.ManagerSocketException as e:
+            print(
+                "Error connecting to the manager: %s" % e.strerror
+            )
+            sys.exit(1)
+        except asterisk.manager.ManagerAuthException as e:
+            print(
+                "Error logging in to the manager: %s" % e.strerror
+            )
+            sys.exit(1)
+        except asterisk.manager.ManagerException as e:
+            print("Error: %s" % e.strerror)
+            sys.exit(1)
+
+    finally:
+        # remember to clean up
+        manager.close()
 
 Remember all header, response, and event names are case sensitive.
 
-Not all manager actions are implmented as of yet, feel free to add them
+Not all manager actions are implemented as of yet, feel free to add them
 and submit patches.
 
 Specification
 -------------
 """
 
-import sys
-import os
 import queue
 import socket
 import threading
 import uuid
+
 from six import PY3
-import re
-from types import *
-from time import sleep
 
 EOL = '\n'
 
 
 class ManagerMsg(object):
     """A manager interface message"""
+
     def __init__(self, response):
         # the raw response, straight from the horse's mouth:
         self.response = response
@@ -124,9 +126,9 @@ class ManagerMsg(object):
                 # we store the variable in a dictionary parsed
                 if 'ChanVariable' in k:
                     if not self.headers.has_key('ChanVariable'):
-                        self.headers['ChanVariable']={}
-                    name, value = (x.strip() for x in v.split('=',1))
-                    self.headers['ChanVariable'][name]=value
+                        self.headers['ChanVariable'] = {}
+                    name, value = (x.strip() for x in v.split('=', 1))
+                    self.headers['ChanVariable'][name] = value
                 else:
                     self.headers[k] = v
             except ValueError:
@@ -156,6 +158,7 @@ class ManagerMsg(object):
 
 class Event(object):
     """Manager interface Events, __init__ expects a 'ManagerMsg' message"""
+
     def __init__(self, message):
 
         # store all of the event data
@@ -165,8 +168,7 @@ class Event(object):
 
         # if this is not an event message we have a problem
         if not message.has_header('Event'):
-            raise ManagerException(
-                'Trying to create event from non event message')
+            raise ManagerException('Trying to create event from non event message')
 
         # get the event name
         self.name = message.get_header('Event')
@@ -192,8 +194,8 @@ class Event(object):
 
 class Manager(object):
     def __init__(self):
-        self._sock = None     # our socket
-        self.title = None     # set by received greeting
+        self._sock = None  # our socket
+        self.title = None  # set by received greeting
         self._connected = threading.Event()
         self._running = threading.Event()
 
@@ -217,8 +219,7 @@ class Manager(object):
 
         # some threads
         self.message_thread = threading.Thread(target=self.message_loop)
-        self.event_dispatch_thread = threading.Thread(
-            target=self.event_dispatch)
+        self.event_dispatch_thread = threading.Thread(target=self.event_dispatch)
 
         self.message_thread.setDaemon(True)
         self.event_dispatch_thread.setDaemon(True)
@@ -244,7 +245,7 @@ class Manager(object):
     def get_actionID(self):
         """
         Return an unique actionID, with a shared prefix for all actionIDs
-        generated by this Manager instance """
+        generated by this Manager instance"""
         return '%s-%08x' % (self.actionID_base, self.next_seq())
 
     def send_action(self, cdict={}, **kwargs):
@@ -290,7 +291,7 @@ class Manager(object):
 
         # lock the socket and send our command
         try:
-            self._sock.write(command.encode('utf8','ignore'))
+            self._sock.write(command.encode('utf8', 'ignore'))
             # Check if The socket is already closed. May happen after sending "Action: Logoff"
             if not self._sock.closed:
                 self._sock.flush()
@@ -319,7 +320,7 @@ class Manager(object):
             try:
                 lines = []
                 for line in self._sock:
-                    line = line.decode('utf8','ignore')
+                    line = line.decode('utf8', 'ignore')
                     # check to see if this is the greeting line
                     if not self.title and '/' in line and not ':' in line:
                         # store the title of the manager we are connecting to:
@@ -355,11 +356,17 @@ class Manager(object):
                         multiline = True
                     # Response: Follows indicates we should wait for end
                     # marker --END COMMAND--
-                    if not (multiline or status) and line.startswith('Response') and \
-                            line.split(':', 1)[1].strip() == 'Follows':
+                    if (
+                        not (multiline or status)
+                        and line.startswith('Response')
+                        and line.split(':', 1)[1].strip() == 'Follows'
+                    ):
                         wait_for_marker = True
                     # same when seeing end of multiline response
-                    if multiline and (line.startswith('--END COMMAND--') or line.strip().endswith('--END COMMAND--')):
+                    if multiline and (
+                        line.startswith('--END COMMAND--')
+                        or line.strip().endswith('--END COMMAND--')
+                    ):
                         wait_for_marker = False
                         multiline = False
                     # same when seeing end of status response
@@ -459,8 +466,9 @@ class Manager(object):
             # dispatch our events
 
             # first build a list of the functions to execute
-            callbacks = (self._event_callbacks.get(ev.name, [])
-                         + self._event_callbacks.get('*', []))
+            callbacks = self._event_callbacks.get(ev.name, []) + self._event_callbacks.get(
+                '*', []
+            )
 
             # now execute the functions
             for callback in callbacks:
@@ -519,7 +527,7 @@ class Manager(object):
 
         self._running.clear()
 
-# Manager actions
+    # Manager actions
 
     def login(self, username, secret):
         """Login to the manager, throws ManagerAuthException when login falis"""
@@ -577,7 +585,21 @@ class Manager(object):
 
         return self.send_action(cdict)
 
-    def originate(self, channel, exten, context='', priority='', timeout='', application='', data='', caller_id='', run_async=False, earlymedia='false', account='', variables={}):
+    def originate(
+        self,
+        channel,
+        exten,
+        context='',
+        priority='',
+        timeout='',
+        application='',
+        data='',
+        caller_id='',
+        run_async=False,
+        earlymedia='false',
+        account='',
+        variables={},
+    ):
         """Originate a call"""
 
         cdict = {'Action': 'Originate'}
@@ -601,12 +623,10 @@ class Manager(object):
             cdict['EarlyMedia'] = earlymedia
         if account:
             cdict['Account'] = account
-        # join dict of vairables together in a string in the form of 'key=val|key=val'
-        # with the latest CVS HEAD this is no longer necessary
-        # if variables: cdict['Variable'] = '|'.join(['='.join((str(key), str(value))) for key, value in variables.items()])
         if variables:
-            cdict['Variable'] = ['='.join(
-                (str(key), str(value))) for key, value in variables.items()]
+            cdict['Variable'] = [
+                '='.join((str(key), str(value))) for key, value in variables.items()
+            ]
 
         return self.send_action(cdict)
 
@@ -681,7 +701,7 @@ class Manager(object):
         return self.send_action(cdict)
 
     def reload(self, module):
-        """ Reloads config for a given module """
+        """Reloads config for a given module"""
 
         cdict = {'Action': 'Reload'}
         cdict['Module'] = module
@@ -716,6 +736,7 @@ class Manager(object):
         cdict['Val'] = val
 
         return self.send_action(cdict)
+
 
 class ManagerException(Exception):
     pass

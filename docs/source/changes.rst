@@ -2,4 +2,3 @@ Changes
 *******
 
 .. include:: ../../CHANGELOG
-

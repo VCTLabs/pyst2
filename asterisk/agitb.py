@@ -10,10 +10,13 @@ To enable this module, do:
 .. code-block:: python
 
    import asterisk.agitb, asterisk.agi
-   asterisk.agitb.enable(display = False, logdir = '/var/log/asterisk/')
+
+   asterisk.agitb.enable(
+       display=False, logdir="/var/log/asterisk/"
+   )
 
    agi = asterisk.agi.AGI()
-   asterisk.agitb.enable(agi, False, '/var/log/asterisk')
+   asterisk.agitb.enable(agi, False, "/var/log/asterisk")
 
 at the top of your script.  The optional arguments to enable() are:
 
@@ -38,13 +41,15 @@ This script was adapted from Ka-Ping Yee's cgitb.
 Specification
 -------------
 """
+from __future__ import annotations
+
+import sys
+from typing import List
 
 __author__ = 'Matthew Nicholson'
 __version__ = '0.1.0'
 
-import sys
-
-__UNDEF__ = []                          # a special sentinel object
+__UNDEF__: List = []  # a special sentinel object
 
 
 def lookup(name, frame, locals):
@@ -66,8 +71,9 @@ def lookup(name, frame, locals):
 
 def scanvars(reader, frame, locals):
     """Scan one logical line of Python and look up values of variables used."""
-    import tokenize
     import keyword
+    import tokenize
+
     vars, lasttoken, parent, prefix, value = [], None, None, '', __UNDEF__
     for ttype, token, start, end, line in tokenize.generate_tokens(reader):
         if ttype == tokenize.NEWLINE:
@@ -80,7 +86,7 @@ def scanvars(reader, frame, locals):
             else:
                 where, value = lookup(token, frame, locals)
                 vars.append((token, where, value))
-        elif token == '.':
+        elif token == '.':  # nosec # way false positive
             prefix += lasttoken + '.'
             parent = value
         else:
@@ -91,23 +97,26 @@ def scanvars(reader, frame, locals):
 
 def text(eparams, context=5):
     """Return a plain text document describing a given traceback."""
+    import inspect
+    import linecache
     import os
-    import types
+    import pydoc
     import time
     import traceback
-    import linecache
-    import inspect
-    import pydoc
+    import types
 
     etype, evalue, etb = eparams
     if isinstance(etype, types.ClassType):
         etype = etype.__name__
     pyver = 'Python ' + sys.version.split()[0] + ': ' + sys.executable
     date = time.ctime(time.time())
-    head = "%s\n%s\n%s\n" % (str(etype), pyver, date) + '''
+    head = (
+        "%s\n%s\n%s\n" % (str(etype), pyver, date)
+        + '''
 A problem occurred in a Python script.  Here is the sequence of
 function calls leading up to the error, in the order they occurred.
 '''
+    )
 
     frames = []
     records = inspect.getinnerframes(etb, context)
@@ -116,9 +125,17 @@ function calls leading up to the error, in the order they occurred.
         args, varargs, varkw, locals = inspect.getargvalues(frame)
         call = ''
         if func != '?':
-            call = 'in ' + func + \
-                inspect.formatargvalues(args, varargs, varkw, locals,
-                                        formatvalue=lambda value: '=' + pydoc.text.repr(value))
+            call = (
+                'in '
+                + func
+                + inspect.formatargvalues(
+                    args,
+                    varargs,
+                    varkw,
+                    locals,
+                    formatvalue=lambda value: '=' + pydoc.text.repr(value),
+                )
+            )
 
         highlight = {}
 
@@ -128,6 +145,7 @@ function calls leading up to the error, in the order they occurred.
                 return linecache.getline(file, lnum[0])
             finally:
                 lnum[0] += 1
+
         vars = scanvars(reader, frame, locals)
 
         rows = [' %s %s' % (file, call)]
@@ -163,23 +181,28 @@ function calls leading up to the error, in the order they occurred.
             value = pydoc.text.repr(getattr(evalue, name))
             exception.append('\n%s%s = %s' % (" " * 4, name, value))
 
-    return head + ''.join(frames) + ''.join(exception) + '''
+    return (
+        head
+        + ''.join(frames)
+        + ''.join(exception)
+        + '''
 
 The above is a description of an error in a Python program.  Here is
 the original traceback:
 
 %s
-''' % ''.join(traceback.format_exception(etype, evalue, etb))
+'''
+        % ''.join(traceback.format_exception(etype, evalue, etb))
+    )
 
 
 class Hook:
     """A hook to replace sys.excepthook that shows tracebacks in HTML."""
 
-    def __init__(self, display=1, logdir=None, context=5, file=None,
-                 agi=None):
-        self.display = display          # send tracebacks to browser if true
-        self.logdir = logdir            # log tracebacks to files if not None
-        self.context = context          # number of source code lines per frame
+    def __init__(self, display=1, logdir=None, context=5, file=None, agi=None):
+        self.display = display  # send tracebacks to browser if true
+        self.logdir = logdir  # log tracebacks to files if not None
+        self.context = context  # number of source code lines per frame
         self.file = file or sys.stderr  # place to send the output
         self.agi = agi
 
@@ -191,12 +214,13 @@ class Hook:
 
         try:
             doc = text(info, self.context)
-        except:                         # just in case something goes wrong
+        except:  # just in case something goes wrong
             import traceback
+
             doc = ''.join(traceback.format_exception(*info))
 
         if self.display:
-            if self.agi:   # print to agi
+            if self.agi:  # print to agi
                 for line in doc.split('\n'):
                     self.agi.verbose(line, 4)
             else:
@@ -210,6 +234,7 @@ class Hook:
         if self.logdir is not None:
             import os
             import tempfile
+
             (fd, path) = tempfile.mkstemp(suffix='.txt', dir=self.logdir)
             try:
                 file = os.fdopen(fd, 'w')
@@ -226,7 +251,7 @@ class Hook:
 
         try:
             self.file.flush()
-        except:
+        except IOError:
             pass
 
 
@@ -239,8 +264,7 @@ def enable(agi=None, display=1, logdir=None, context=5):
     The optional argument 'display' can be set to 0 to suppress sending the
     traceback to the browser, and 'logdir' can be set to a directory to cause
     tracebacks to be written to files there."""
-    except_hook = Hook(display=display, logdir=logdir,
-                       context=context, agi=agi)
+    except_hook = Hook(display=display, logdir=logdir, context=context, agi=agi)
     sys.excepthook = except_hook
 
     global handler
