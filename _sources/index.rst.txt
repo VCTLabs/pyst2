@@ -1,5 +1,5 @@
-Welcome to the ari-py documentation!
-====================================
+Welcome to the pyst2 documentation!
+===================================
 
 .. git_commit_detail::
     :branch:
