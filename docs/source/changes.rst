@@ -1,4 +1,1 @@
-Changes
-*******
-
-.. include:: ../../CHANGELOG
+.. include:: ../../HISTORY.rst

@@ -1,6 +1,6 @@
 graft docs
 graft tests
 
-include README.rst CHANGELOG tox.ini
+include README.rst HISTORY.rst CHANGELOG.rst tox.ini
 
 global-exclude *~ *.py[cod]

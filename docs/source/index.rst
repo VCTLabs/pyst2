@@ -1,19 +1,20 @@
-Welcome to pyst2's documentation!
-=================================
+Welcome to the ari-py documentation!
+====================================
 
-Contents:
+.. git_commit_detail::
+    :branch:
+    :commit:
+    :sha_length: 10
+    :uncommitted:
+    :untracked:
 
 .. toctree::
-   :maxdepth: 3
+    :maxdepth: 4
+    :caption: Contents:
 
-   readme
-   agi
-   agitb
-   config
-   fastagi
-   manager
-
-   changes
+    README
+    api/modules
+    changes
 
 Indices and tables
 ==================

@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
 minversion = "6.2.5"
-testpaths = ["ari_test",]
+testpaths = ["tests",]
 norecursedirs = ["docs",]
 log_cli =  false
 doctest_optionflags = ["ELLIPSIS", "NORMALIZE_WHITESPACE",]
@@ -18,11 +18,8 @@ markers = "subscript"
 [tool.coverage.run]
 plugins = ["covdefaults"]
 
-#[tool.coverage.paths]
-#source = ["ari"]
-
 [tool.coverage.report]
-fail_under = 80
+#fail_under = 50
 exclude_lines = [
     "def __repr__",
 ]
