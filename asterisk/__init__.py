@@ -10,5 +10,9 @@ manager - a module for interacting with the asterisk manager interface
 
 """
 
+from . import agi, agitb, config, manager
+from ._version import __version__
+
+version = __version__
+
 __all__ = ['agi', 'agitb', 'config', 'manager']
-__version__ = '0.5.1'

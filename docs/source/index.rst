@@ -1,24 +1,20 @@
-.. pyst2 documentation master file, created by
-   sphinx-quickstart on Mon Mar  7 10:41:33 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Welcome to the ari-py documentation!
+====================================
 
-Welcome to pyst2's documentation!
-=================================
-
-Contents:
+.. git_commit_detail::
+    :branch:
+    :commit:
+    :sha_length: 10
+    :uncommitted:
+    :untracked:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 4
+    :caption: Contents:
 
-   readme
-   agi
-   agitb
-   config
-   fastagi
-   manager
-
-   changes
+    README
+    api/modules
+    changes
 
 Indices and tables
 ==================
@@ -26,4 +22,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# vim: set expandtab:
 """
 .. module:: config
    :synopsis: Parse Asterisk configuration files.
@@ -13,47 +11,46 @@ Example
 
    import asterisk.config
    import sys
-   
+
    # load and parse the config file
    try:
-      config = asterisk.config.Config('/etc/asterisk/extensions.conf')
+       config = asterisk.config.Config(
+           "/etc/asterisk/extensions.conf"
+       )
    except asterisk.config.ParseError as e:
-      print "Parse Error line: %s: %s" % (e.line, e.strerror)
-      sys.exit(1)
+       print("Parse Error line: %s: %s" % (e.line, e.strerror))
+       sys.exit(1)
    except IOError as e:
-      print "Error opening file: %s" % e.strerror
-      sys.exit(1)
-   
+       print("Error opening file: %s" % e.strerror)
+       sys.exit(1)
+
    # print our parsed output
    for category in config.categories:
-      print '[%s]' % category.name   # print the current category
+       print("[%s]" % category.name)  # print the current category
 
-      for item in category.items:
-         print '   %s = %s' % (item.name, item.value)
+       for item in category.items:
+           print("   %s = %s" % (item.name, item.value))
 
 
 Specification
 -------------
 """
 
-import sys
-
 
 class ParseError(Exception):
     pass
 
 
-class Line(object):
+class Line:
     def __init__(self, line, number):
         self.line = ''
         self.comment = ''
-        line = line.strip()    # I guess we don't preserve indentation
+        line = line.strip()  # I guess we don't preserve indentation
         self.number = number
         parts = line.split(';')
         if len(parts) >= 2:
             self.line = parts[0].strip()
-            self.comment = ';'.join(
-                parts[1:])  # Just in case the comment contained ';'
+            self.comment = ';'.join(parts[1:])  # Just in case the comment contained ';'
         else:
             self.line = line
 
@@ -63,7 +60,7 @@ class Line(object):
     def get_line(self):
         if self.comment and self.line:
             return '%s\t;%s' % (self.line, self.comment)
-        elif self.comment and not self.line:
+        if self.comment and not self.line:
             return ';%s' % self.comment
         return self.line
 
@@ -72,15 +69,13 @@ class Category(Line):
     def __init__(self, line='', num=-1, name=None):
         Line.__init__(self, line, num)
         if self.line:
-            if (self.line[0] != '[' or self.line[-1] != ']'):
-                raise ParseError(
-                    self.number, "Missing '[' or ']' in category definition")
+            if self.line[0] != '[' or self.line[-1] != ']':
+                raise ParseError(self.number, "Missing '[' or ']' in category definition")
             self.name = self.line[1:-1]
         elif name:
             self.name = name
         else:
-            raise Exception(
-                "Must provide name or line representing a category")
+            raise Exception("Must provide name or line representing a category")
 
         self.items = []
         self.comments = []
@@ -109,7 +104,7 @@ class Item(Line):
         self.style = ''
         if self.line:
             self.parse()
-        elif (name and value):
+        elif name and value:
             self.name = name
             self.value = value
         else:
@@ -118,12 +113,10 @@ class Item(Line):
     def parse(self):
         try:
             name, value = self.line.split('=', 1)
-        except ValueError:
+        except ValueError as exc:
             if self.line.strip()[-1] == ']':
-                raise ParseError(self.number, "Category name missing '['")
-            else:
-                raise ParseError(
-                    self.number, "Item must be in name = value pairs")
+                raise ParseError(self.number, "Category name missing '['") from exc
+            raise ParseError(self.number, "Item must be in name = value pairs") from exc
 
         if value and value[0] == '>':
             self.style = '>'  # preserve the style of the original
@@ -137,11 +130,11 @@ class Item(Line):
         return '%s =%s %s' % (self.name, self.style, self.value)
 
 
-class Config(object):
+class Config:
     def __init__(self, filename):
         self.filename = filename
-        self.raw_lines = []     # Holds the raw strings
-        self.lines = []         # Holds things in order
+        self.raw_lines = []  # Holds the raw strings
+        self.lines = []  # Holds things in order
         self.categories = []
 
         # load and parse the file
@@ -150,11 +143,6 @@ class Config(object):
 
     def load(self):
         self.raw_lines = open(self.filename).readlines()
-        #try:
-            #self.raw_lines = open(self.filename).readlines()
-        #except IOError:
-            #sys.stderr.write('WARNING: error opening filename: %s  No data read. Starting new file?' % self.filename)
-            #self.raw_lines = []
 
     def parse(self):
         cat = None
@@ -168,14 +156,13 @@ class Config(object):
                 if cat:
                     cat.comments.append(item)
                 continue
-            elif line[0] == '[':
+            if line[0] == '[':
                 cat = Category(line, num)
                 self.lines.append(cat)
                 self.categories.append(cat)
                 continue
-            else:
-                item = Item(line, num)
-                self.lines.append(item)
-                if cat:
-                    cat.append(item)
-                continue
+            item = Item(line, num)
+            self.lines.append(item)
+            if cat:
+                cat.append(item)
+            continue
