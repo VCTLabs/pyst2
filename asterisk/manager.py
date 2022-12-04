@@ -63,18 +63,20 @@ and submit patches.
 Specification
 -------------
 """
+from __future__ import annotations
 
 import queue
 import socket
 import threading
 import uuid
+from typing import Dict
 
 from six import PY3
 
 EOL = '\n'
 
 
-class ManagerMsg(object):
+class ManagerMsg:
     """A manager interface message"""
 
     def __init__(self, response):
@@ -154,7 +156,7 @@ class ManagerMsg(object):
             return self.headers['Event']
 
 
-class Event(object):
+class Event:
     """Manager interface Events, __init__ expects a 'ManagerMsg' message"""
 
     def __init__(self, message):
@@ -190,7 +192,14 @@ class Event(object):
         return self.headers.get('ActionID', 0000)
 
 
-class Manager(object):
+class Manager:
+    """
+    TODO: add a docstring.
+
+    """
+
+    originate_vars: Dict = {}
+
     def __init__(self):
         self._sock = None  # our socket
         self.title = None  # set by received greeting
@@ -247,7 +256,7 @@ class Manager(object):
         """
         return '%s-%08x' % (self.actionID_base, self.next_seq())
 
-    def send_action(self, cdict={}, **kwargs):
+    def send_action(self, cdict: Dict, **kwargs):
         """
         Send a command to the manager
 
@@ -321,7 +330,7 @@ class Manager(object):
                 for line in self._sock:
                     line = line.decode('utf8', 'ignore')
                     # check to see if this is the greeting line
-                    if not self.title and '/' in line and not ':' in line:
+                    if not self.title and '/' in line and ':' not in line:
                         # store the title of the manager we are connecting to:
                         self.title = line.split('/')[0].strip()
                         # store the version of the manager we are connecting to:
@@ -433,7 +442,7 @@ class Manager(object):
                 if not data:
                     # notify the other queues
                     self._event_queue.put(None)
-                    for waiter in self._reswaiting:
+                    for _waiter in self._reswaiting:
                         self._response_queue.put(None)
                     break
 
@@ -599,7 +608,7 @@ class Manager(object):
         run_async=False,
         earlymedia='false',
         account='',
-        variables={},
+        variables=originate_vars,
     ):
         """Originate a call"""
 

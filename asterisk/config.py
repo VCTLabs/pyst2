@@ -41,7 +41,7 @@ class ParseError(Exception):
     pass
 
 
-class Line(object):
+class Line:
     def __init__(self, line, number):
         self.line = ''
         self.comment = ''
@@ -60,7 +60,7 @@ class Line(object):
     def get_line(self):
         if self.comment and self.line:
             return '%s\t;%s' % (self.line, self.comment)
-        elif self.comment and not self.line:
+        if self.comment and not self.line:
             return ';%s' % self.comment
         return self.line
 
@@ -113,11 +113,10 @@ class Item(Line):
     def parse(self):
         try:
             name, value = self.line.split('=', 1)
-        except ValueError:
+        except ValueError as exc:
             if self.line.strip()[-1] == ']':
-                raise ParseError(self.number, "Category name missing '['")
-            else:
-                raise ParseError(self.number, "Item must be in name = value pairs")
+                raise ParseError(self.number, "Category name missing '['") from exc
+            raise ParseError(self.number, "Item must be in name = value pairs") from exc
 
         if value and value[0] == '>':
             self.style = '>'  # preserve the style of the original
@@ -131,7 +130,7 @@ class Item(Line):
         return '%s =%s %s' % (self.name, self.style, self.value)
 
 
-class Config(object):
+class Config:
     def __init__(self, filename):
         self.filename = filename
         self.raw_lines = []  # Holds the raw strings

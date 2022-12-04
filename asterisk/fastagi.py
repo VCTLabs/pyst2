@@ -18,9 +18,6 @@ import sys
 
 import asterisk.agi
 
-# import pkg_resources
-# PYST_VERSION = pkg_resources.get_distribution("pyst2").version
-
 __verison__ = 0.1
 
 # TODO: Read options from config file.
@@ -39,11 +36,11 @@ class FastAGI(socketserver.StreamRequestHandler):
             sys.stderr.write(
                 'Unable to connect to agi://{} {}\n'.format(self.client_address[0], str(e))
             )
-        except socketserver.socket.timeout as e:
+        except socketserver.socket.timeout:
             sys.stderr.write('Timeout receiving data from {}\n'.format(self.client_address))
-        except socketserver.socket.error as e:
+        except socketserver.socket.error:
             sys.stderr.write(
-                'Could not open the socket. Is someting else listening on this port?\n'
+                'Could not open the socket. Is something else listening on this port?\n'
             )
         except Exception as e:
             sys.stderr.write('An unknown error: {}\n'.format(str(e)))

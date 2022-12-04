@@ -2,7 +2,7 @@
 
 """
 .. module:: agi
-   :synopsis: This module contains functions and classes to implment AGI scripts in python.
+   :synopsis: This module contains functions and classes to implement AGI scripts in python.
 
 pyvr
 
@@ -21,6 +21,8 @@ pyvr
 Specification
 -------------
 """
+
+from __future__ import annotations
 
 import pprint
 import re
@@ -53,7 +55,7 @@ class AGIAppError(AGIError):
 
 
 # there are several different types of hangups we can detect
-# they all are derrived from AGIHangup
+# they all are derived from AGIHangup
 
 
 class AGIHangup(AGIAppError):
@@ -262,7 +264,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def tdd_mode(self, mode='off'):
@@ -292,7 +294,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def control_stream_file(
@@ -323,7 +325,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def send_image(self, filename):
@@ -352,7 +354,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_number(self, number, escape_digits=''):
@@ -369,7 +371,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_alpha(self, characters, escape_digits=''):
@@ -386,7 +388,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_phonetic(self, characters, escape_digits=''):
@@ -403,7 +405,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_date(self, seconds, escape_digits=''):
@@ -418,7 +420,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_time(self, seconds, escape_digits=''):
@@ -433,7 +435,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def say_datetime(self, seconds, escape_digits='', format='', zone=''):
@@ -451,7 +453,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def get_data(self, filename, timeout=DEFAULT_TIMEOUT, max_digits=255):
@@ -483,7 +485,7 @@ class AGI:
         else:
             try:
                 return chr(int(res))
-            except:
+            except TypeError:
                 raise AGIError('Unable to convert result to char: %s' % res)
 
     def set_context(self, context):
@@ -551,7 +553,7 @@ class AGI:
         )['result'][0]
         try:
             return chr(int(res))
-        except:
+        except TypeError:
             raise AGIError('Unable to convert result to digit: %s' % res)
 
     def set_autohangup(self, secs):

@@ -75,7 +75,7 @@ def scanvars(reader, frame, locals):
     import tokenize
 
     vars, lasttoken, parent, prefix, value = [], None, None, '', __UNDEF__
-    for ttype, token, start, end, line in tokenize.generate_tokens(reader):
+    for ttype, token, _start, _end, _line in tokenize.generate_tokens(reader):
         if ttype == tokenize.NEWLINE:
             break
         if ttype == tokenize.NAME and token not in keyword.kwlist:
@@ -118,10 +118,12 @@ function calls leading up to the error, in the order they occurred.
 '''
     )
 
+    filen = ''
     frames = []
+    highlight = {}
     records = inspect.getinnerframes(etb, context)
-    for frame, file, lnum, func, lines, index in records:
-        file = file and os.path.abspath(file) or '?'
+    for frame, filen, lnum, func, lines, index in records:
+        filen = filen and os.path.abspath(filen) or '?'
         args, varargs, varkw, locals = inspect.getargvalues(frame)
         call = ''
         if func != '?':
@@ -137,18 +139,17 @@ function calls leading up to the error, in the order they occurred.
                 )
             )
 
-        highlight = {}
-
-        def reader(lnum=[lnum]):
+        def reader(lnum: List, filen: str):
+            highlight.clear()
             highlight[lnum[0]] = 1
             try:
-                return linecache.getline(file, lnum[0])
+                return linecache.getline(filen, lnum[0])
             finally:
                 lnum[0] += 1
 
-        vars = scanvars(reader, frame, locals)
+        svars = scanvars(reader, frame, locals)
 
-        rows = [' %s %s' % (file, call)]
+        rows = [' %s %s' % (filen, call)]
         if index is not None:
             i = lnum - index
             for line in lines:
@@ -157,7 +158,7 @@ function calls leading up to the error, in the order they occurred.
                 i += 1
 
         done, dump = {}, []
-        for name, where, value in vars:
+        for name, where, value in svars:
             if name in done:
                 continue
             done[name] = 1
@@ -214,7 +215,7 @@ class Hook:
 
         try:
             doc = text(info, self.context)
-        except:  # just in case something goes wrong
+        except Exception:  # just in case something goes wrong
             import traceback
 
             doc = ''.join(traceback.format_exception(*info))
@@ -241,7 +242,7 @@ class Hook:
                 file.write(doc)
                 file.close()
                 msg = '%s contains the description of this error.' % path
-            except:
+            except IOError:
                 msg = 'Tried to save traceback to %s, but failed.' % path
 
             if self.agi:
