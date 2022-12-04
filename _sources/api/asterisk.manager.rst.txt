@@ -1,0 +1,7 @@
+asterisk.manager module
+=======================
+
+.. automodule:: asterisk.manager
+   :members:
+   :undoc-members:
+   :show-inheritance:

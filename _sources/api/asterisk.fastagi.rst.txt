@@ -1,0 +1,7 @@
+asterisk.fastagi module
+=======================
+
+.. automodule:: asterisk.fastagi
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>asterisk.agi module &mdash; pyst2 0.5.2.dev16 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="asterisk.agitb module" href="asterisk.agitb.html" />
+    <link rel="prev" title="asterisk package" href="asterisk.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> pyst2
+          </a>
+              <div class="version">
+                0.5.2.dev16
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">pyst2: A Python Interface to Asterisk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">asterisk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="asterisk.html">asterisk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="asterisk.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">asterisk.agi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agitb.html">asterisk.agitb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.config.html">asterisk.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.fastagi.html">asterisk.fastagi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.manager.html">asterisk.manager module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.html#module-asterisk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyst2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">asterisk</a></li>
+          <li class="breadcrumb-item"><a href="asterisk.html">asterisk package</a></li>
+      <li class="breadcrumb-item active">asterisk.agi module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/asterisk.agi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-asterisk.agi">
+<span id="asterisk-agi-module"></span><h1>asterisk.agi module<a class="headerlink" href="#module-asterisk.agi" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-agi"></span><p>pyvr</p>
+<dl class="simple">
+<dt>{‘agi_callerid’<span class="classifier">‘mars.putland.int’,</span></dt><dd><p>‘agi_channel’  : ‘IAX[<a class="reference external" href="mailto:kputland&#37;&#52;&#48;kputland">kputland<span>&#64;</span>kputland</a>]/119’,
+‘agi_context’  : ‘default’,
+‘agi_dnid’     : ‘1000’,
+‘agi_enhanced’ : ‘0.0’,
+‘agi_extension’: ‘1000’,
+‘agi_language’ : ‘en’,
+‘agi_priority’ : ‘1’,
+‘agi_rdnis’    : ‘’,
+‘agi_request’  : ‘pyst’,
+‘agi_type’     : ‘IAX’}</p>
+</dd>
+</dl>
+<section id="specification">
+<h2>Specification<a class="headerlink" href="#specification" title="Permalink to this heading"></a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="asterisk.agi.AGI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdin&gt;'</span> <span class="pre">mode='r'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stderr&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class encapsulates communication between Asterisk an a python script.
+It handles encoding commands to Asterisk and parsing responses from
+Asterisk.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.answer">
+<span class="sig-name descname"><span class="pre">answer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.answer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.answer" title="Permalink to this definition"></a></dt>
+<dd><p>agi.answer() –&gt; None
+Answer channel if not already in answer state.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.appexec">
+<span class="sig-name descname"><span class="pre">appexec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.appexec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.appexec" title="Permalink to this definition"></a></dt>
+<dd><p>Executes &lt;application&gt; with given &lt;options&gt;.
+Returns whatever the application returns, or -2 on failure to find
+application</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.channel_status">
+<span class="sig-name descname"><span class="pre">channel_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.channel_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.channel_status" title="Permalink to this definition"></a></dt>
+<dd><p>agi.channel_status(channel=’’) –&gt; int
+Returns the status of the specified channel.  If no channel name is
+given the returns the status of the current channel.</p>
+<p>Return values:
+0 Channel is down and available
+1 Channel is down, but reserved
+2 Channel is off hook
+3 Digits (or equivalent) have been dialed
+4 Line is ringing
+5 Remote end is ringing
+6 Line is up
+7 Line is busy</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.control_stream_file">
+<span class="sig-name descname"><span class="pre">control_stream_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pause</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.control_stream_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.control_stream_file" title="Permalink to this definition"></a></dt>
+<dd><p>Send the given file, allowing playback to be interrupted by the given
+digits, if any.  escape_digits is a string ‘12345’ or a list  of
+ints [1,2,3,4,5] or strings [‘1’,’2’,’3’] or mixed [1,’2’,3,’4’]
+If sample offset is provided then the audio will seek to sample
+offset before play starts.  Returns  digit if one was pressed.
+Throws AGIError if the channel was disconnected.  Remember, the file
+extension must not be included in the filename.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.database_del">
+<span class="sig-name descname"><span class="pre">database_del</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.database_del"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.database_del" title="Permalink to this definition"></a></dt>
+<dd><p>agi.database_del(family, key) –&gt; None
+Deletes an entry in the Asterisk database for a
+given family and key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.database_deltree">
+<span class="sig-name descname"><span class="pre">database_deltree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.database_deltree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.database_deltree" title="Permalink to this definition"></a></dt>
+<dd><p>agi.database_deltree(family, key=’’) –&gt; None
+Deletes a family or specific keytree with in a family
+in the Asterisk database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.database_get">
+<span class="sig-name descname"><span class="pre">database_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.database_get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.database_get" title="Permalink to this definition"></a></dt>
+<dd><p>agi.database_get(family, key) –&gt; str
+Retrieves an entry in the Asterisk database for a given family and key.
+Returns 0 if &lt;key&gt; is not set.  Returns 1 if &lt;key&gt;
+is set and returns the variable in parenthesis
+example return code: 200 result=1 (testvariable)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.database_put">
+<span class="sig-name descname"><span class="pre">database_put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">family</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.database_put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.database_put" title="Permalink to this definition"></a></dt>
+<dd><p>agi.database_put(family, key, value) –&gt; None
+Adds or updates an entry in the Asterisk database for a
+given family, key, and value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.exec_command">
+<span class="sig-name descname"><span class="pre">exec_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.exec_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.exec_command" title="Permalink to this definition"></a></dt>
+<dd><p>Send an arbitrary asterisk command with args (even not AGI commands)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.execute" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>agi.get_data(filename, timeout=DEFAULT_TIMEOUT, max_digits=255) –&gt; digits
+Stream the given file and receive dialed digits</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.get_full_variable">
+<span class="sig-name descname"><span class="pre">get_full_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.get_full_variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.get_full_variable" title="Permalink to this definition"></a></dt>
+<dd><p>Get a channel variable.</p>
+<p>This function returns the value of the indicated channel variable.  If
+the variable is not set, an empty string is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.get_option">
+<span class="sig-name descname"><span class="pre">get_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.get_option"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.get_option" title="Permalink to this definition"></a></dt>
+<dd><p>agi.get_option(filename, escape_digits=’’, timeout=0) –&gt; digit
+Send the given file, allowing playback to be interrupted by the given
+digits, if any.  escape_digits is a string ‘12345’ or a list  of
+ints [1,2,3,4,5] or strings [‘1’,’2’,’3’] or mixed [1,’2’,3,’4’]
+Returns  digit if one was pressed.
+Throws AGIError if the channel was disconnected.  Remember, the file
+extension must not be included in the filename.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdin=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdin&gt;'</span> <span class="pre">mode='r'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.get_result"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.get_result" title="Permalink to this definition"></a></dt>
+<dd><p>Read the result of a command from Asterisk</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.get_variable">
+<span class="sig-name descname"><span class="pre">get_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.get_variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.get_variable" title="Permalink to this definition"></a></dt>
+<dd><p>Get a channel variable.</p>
+<p>This function returns the value of the indicated channel variable.  If
+the variable is not set, an empty string is returned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.goto_on_exit">
+<span class="sig-name descname"><span class="pre">goto_on_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.goto_on_exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.goto_on_exit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.hangup">
+<span class="sig-name descname"><span class="pre">hangup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.hangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.hangup" title="Permalink to this definition"></a></dt>
+<dd><p>Hangs up the specified channel.
+If no channel name is given, hangs up the current channel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.noop">
+<span class="sig-name descname"><span class="pre">noop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.noop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.noop" title="Permalink to this definition"></a></dt>
+<dd><p>agi.noop() –&gt; None
+Does nothing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.receive_char">
+<span class="sig-name descname"><span class="pre">receive_char</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.receive_char"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.receive_char" title="Permalink to this definition"></a></dt>
+<dd><p>agi.receive_char(timeout=DEFAULT_TIMEOUT) –&gt; chr
+Receives a character of text on a channel.  Specify timeout to be the
+maximum time to wait for input in milliseconds, or 0 for infinite. Most channels
+do not support the reception of text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.record_file">
+<span class="sig-name descname"><span class="pre">record_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gsm'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'beep'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.record_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.record_file" title="Permalink to this definition"></a></dt>
+<dd><p>Record to a file until a given dtmf digit in the sequence is received. Returns
+‘-1’ on hangup or error.  The format will specify what kind of file will be
+recorded. The &lt;timeout&gt; is the maximum record time in milliseconds, or ‘-1’
+for no &lt;timeout&gt;. &lt;offset samples&gt; is optional, and, if provided, will seek
+to the offset without exceeding the end of the file. &lt;silence&gt; is the number
+of seconds of silence allowed before the function returns despite the lack
+of dtmf digits or reaching &lt;timeout&gt;. &lt;silence&gt; value must be preceded by
+‘s=’ and is also optional.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_alpha">
+<span class="sig-name descname"><span class="pre">say_alpha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_alpha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_alpha" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_alpha(string, escape_digits=’’) –&gt; digit
+Say a given character string, returning early if any of the given DTMF
+digits are received on the channel.
+Throws AGIError on channel failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_date">
+<span class="sig-name descname"><span class="pre">say_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_date" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_date(seconds, escape_digits=’’) –&gt; digit
+Say a given date, returning early if any of the given DTMF digits are
+pressed.  The date should be in seconds since the UNIX Epoch (Jan 1, 1970 00:00:00)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_datetime">
+<span class="sig-name descname"><span class="pre">say_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_datetime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_datetime" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_datetime(seconds, escape_digits=’’, format=’’, zone=’’) –&gt; digit
+Say a given date in the format specified (see voicemail.conf), returning
+early if any of the given DTMF digits are pressed.  The date should be
+in seconds since the UNIX Epoch (Jan 1, 1970 00:00:00).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_digits">
+<span class="sig-name descname"><span class="pre">say_digits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">digits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_digits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_digits" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_digits(digits, escape_digits=’’) –&gt; digit
+Say a given digit string, returning early if any of the given DTMF digits
+are received on the channel.
+Throws AGIError on channel failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_number">
+<span class="sig-name descname"><span class="pre">say_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_number" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_number(number, escape_digits=’’) –&gt; digit
+Say a given digit string, returning early if any of the given DTMF digits
+are received on the channel.
+Throws AGIError on channel failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_phonetic">
+<span class="sig-name descname"><span class="pre">say_phonetic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_phonetic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_phonetic" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_phonetic(string, escape_digits=’’) –&gt; digit
+Phonetically say a given character string, returning early if any of
+the given DTMF digits are received on the channel.
+Throws AGIError on channel failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.say_time">
+<span class="sig-name descname"><span class="pre">say_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.say_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.say_time" title="Permalink to this definition"></a></dt>
+<dd><p>agi.say_time(seconds, escape_digits=’’) –&gt; digit
+Say a given time, returning early if any of the given DTMF digits are
+pressed.  The time should be in seconds since the UNIX Epoch (Jan 1, 1970 00:00:00)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.send_command">
+<span class="sig-name descname"><span class="pre">send_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.send_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.send_command" title="Permalink to this definition"></a></dt>
+<dd><p>Send a command to Asterisk</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.send_image">
+<span class="sig-name descname"><span class="pre">send_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.send_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.send_image" title="Permalink to this definition"></a></dt>
+<dd><p>agi.send_image(filename) –&gt; None
+Sends the given image on a channel.  Most channels do not support the
+transmission of images.   Image names should not include extensions.
+Throws AGIError on channel failure</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.send_text">
+<span class="sig-name descname"><span class="pre">send_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.send_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.send_text" title="Permalink to this definition"></a></dt>
+<dd><p>agi.send_text(text=’’) –&gt; None
+Sends the given text on a channel.  Most channels do not support the
+transmission of text.
+Throws AGIError on error/hangup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_autohangup">
+<span class="sig-name descname"><span class="pre">set_autohangup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_autohangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_autohangup" title="Permalink to this definition"></a></dt>
+<dd><p>agi.set_autohangup(secs) –&gt; None
+Cause the channel to automatically hangup at &lt;secs&gt; seconds in the
+future.  Of course it can be hungup before then as well.   Setting to
+0 will cause the autohangup feature to be disabled on this channel.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_callerid">
+<span class="sig-name descname"><span class="pre">set_callerid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_callerid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_callerid" title="Permalink to this definition"></a></dt>
+<dd><p>agi.set_callerid(number) –&gt; None
+Changes the callerid of the current channel.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_context">
+<span class="sig-name descname"><span class="pre">set_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_context" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the context for continuation upon exiting the application.
+No error appears to be produced.  Does not set exten or priority
+Use at your own risk.  Ensure that you specify a valid context.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_extension">
+<span class="sig-name descname"><span class="pre">set_extension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_extension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_extension" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the extension for continuation upon exiting the application.
+No error appears to be produced.  Does not set context or priority
+Use at your own risk.  Ensure that you specify a valid extension.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_priority">
+<span class="sig-name descname"><span class="pre">set_priority</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">priority</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_priority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_priority" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the priority for continuation upon exiting the application.
+No error appears to be produced.  Does not set exten or context
+Use at your own risk.  Ensure that you specify a valid priority.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.set_variable">
+<span class="sig-name descname"><span class="pre">set_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.set_variable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.set_variable" title="Permalink to this definition"></a></dt>
+<dd><p>Set a channel variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.stream_file">
+<span class="sig-name descname"><span class="pre">stream_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape_digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.stream_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.stream_file" title="Permalink to this definition"></a></dt>
+<dd><p>agi.stream_file(filename, escape_digits=’’, sample_offset=0) –&gt; digit
+Send the given file, allowing playback to be interrupted by the given
+digits, if any.  escape_digits is a string ‘12345’ or a list  of
+ints [1,2,3,4,5] or strings [‘1’,’2’,’3’] or mixed [1,’2’,3,’4’]
+If sample offset is provided then the audio will seek to sample
+offset before play starts.  Returns  digit if one was pressed.
+Throws AGIError if the channel was disconnected.  Remember, the file
+extension must not be included in the filename.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.tdd_mode">
+<span class="sig-name descname"><span class="pre">tdd_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'off'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.tdd_mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.tdd_mode" title="Permalink to this definition"></a></dt>
+<dd><p>agi.tdd_mode(mode=’on’|’off’) –&gt; None
+Enable/Disable TDD transmission/reception on a channel.
+Throws AGIAppError if channel is not TDD-capable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.test_hangup">
+<span class="sig-name descname"><span class="pre">test_hangup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.test_hangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.test_hangup" title="Permalink to this definition"></a></dt>
+<dd><p>This function throws AGIHangup if we have recieved a SIGHUP</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.verbose">
+<span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.verbose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.verbose" title="Permalink to this definition"></a></dt>
+<dd><p>agi.verbose(message=’’, level=1) –&gt; None
+Sends &lt;message&gt; to the console via verbose message system.
+&lt;level&gt; is the the verbose level (1-4)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agi.AGI.wait_for_digit">
+<span class="sig-name descname"><span class="pre">wait_for_digit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agi.html#AGI.wait_for_digit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGI.wait_for_digit" title="Permalink to this definition"></a></dt>
+<dd><p>agi.wait_for_digit(timeout=DEFAULT_TIMEOUT) –&gt; digit
+Waits for up to ‘timeout’ milliseconds for a channel to receive a DTMF
+digit.  Returns digit dialed
+Throws AGIError on channel falure</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIAppError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIAppError</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIAppError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIAppError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIError" title="asterisk.agi.AGIError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIDBError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIDBError</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIDBError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIDBError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIAppError" title="asterisk.agi.AGIAppError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIAppError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIError</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIException" title="asterisk.agi.AGIException"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIException</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIException</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIException" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIHangup">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIHangup</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIHangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIHangup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIAppError" title="asterisk.agi.AGIAppError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIAppError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIInvalidCommand">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIInvalidCommand</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIInvalidCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIInvalidCommand" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIError" title="asterisk.agi.AGIError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIResultHangup">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIResultHangup</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIResultHangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIResultHangup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIHangup" title="asterisk.agi.AGIHangup"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIHangup</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGISIGHUPHangup">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGISIGHUPHangup</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGISIGHUPHangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGISIGHUPHangup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIHangup" title="asterisk.agi.AGIHangup"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIHangup</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGISIGPIPEHangup">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGISIGPIPEHangup</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGISIGPIPEHangup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGISIGPIPEHangup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIHangup" title="asterisk.agi.AGIHangup"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIHangup</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIUnknownError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIUnknownError</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIUnknownError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIUnknownError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIError" title="asterisk.agi.AGIError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="asterisk.agi.AGIUsageError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agi.</span></span><span class="sig-name descname"><span class="pre">AGIUsageError</span></span><a class="reference internal" href="../_modules/asterisk/agi.html#AGIUsageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agi.AGIUsageError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#asterisk.agi.AGIError" title="asterisk.agi.AGIError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AGIError</span></code></a></p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="asterisk.html" class="btn btn-neutral float-left" title="asterisk package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asterisk.agitb.html" class="btn btn-neutral float-right" title="asterisk.agitb module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

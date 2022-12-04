@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>asterisk.fastagi module &mdash; pyst2 0.5.2.dev16 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="asterisk.manager module" href="asterisk.manager.html" />
+    <link rel="prev" title="asterisk.config module" href="asterisk.config.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> pyst2
+          </a>
+              <div class="version">
+                0.5.2.dev16
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">pyst2: A Python Interface to Asterisk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">asterisk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="asterisk.html">asterisk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="asterisk.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agi.html">asterisk.agi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agitb.html">asterisk.agitb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.config.html">asterisk.config module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">asterisk.fastagi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.manager.html">asterisk.manager module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.html#module-asterisk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyst2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">asterisk</a></li>
+          <li class="breadcrumb-item"><a href="asterisk.html">asterisk package</a></li>
+      <li class="breadcrumb-item active">asterisk.fastagi module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/asterisk.fastagi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-asterisk.fastagi">
+<span id="asterisk-fastagi-module"></span><h1>asterisk.fastagi module<a class="headerlink" href="#module-asterisk.fastagi" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-fastagi"></span><p>Requires modified pyst2 to support reading stdin/out/err</p>
+<blockquote>
+<div><p>Copyright 2011 VOICE1, LLC
+By: Ben Davis &lt;<a class="reference external" href="mailto:ben&#37;&#52;&#48;voice1-dot-me">ben<span>&#64;</span>voice1-dot-me</a>&gt;</p>
+</div></blockquote>
+<section id="specification">
+<h2>Specification<a class="headerlink" href="#specification" title="Permalink to this heading"></a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="asterisk.fastagi.FastAGI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.fastagi.</span></span><span class="sig-name descname"><span class="pre">FastAGI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/fastagi.html#FastAGI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.fastagi.FastAGI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/socketserver.html#socketserver.StreamRequestHandler" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamRequestHandler</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.fastagi.FastAGI.handle">
+<span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/fastagi.html#FastAGI.handle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.fastagi.FastAGI.handle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="asterisk.fastagi.FastAGI.timeout">
+<span class="sig-name descname"><span class="pre">timeout</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#asterisk.fastagi.FastAGI.timeout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="asterisk.config.html" class="btn btn-neutral float-left" title="asterisk.config module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asterisk.manager.html" class="btn btn-neutral float-right" title="asterisk.manager module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

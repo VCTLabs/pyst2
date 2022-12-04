@@ -1,0 +1,22 @@
+asterisk package
+================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   asterisk.agi
+   asterisk.agitb
+   asterisk.config
+   asterisk.fastagi
+   asterisk.manager
+
+Module contents
+---------------
+
+.. automodule:: asterisk
+   :members:
+   :undoc-members:
+   :show-inheritance:

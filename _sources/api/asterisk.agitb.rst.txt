@@ -1,0 +1,7 @@
+asterisk.agitb module
+=====================
+
+.. automodule:: asterisk.agitb
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>asterisk package &mdash; pyst2 0.5.2.dev16 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="asterisk.agi module" href="asterisk.agi.html" />
+    <link rel="prev" title="asterisk" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> pyst2
+          </a>
+              <div class="version">
+                0.5.2.dev16
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">pyst2: A Python Interface to Asterisk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">asterisk</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">asterisk package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agi.html">asterisk.agi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agitb.html">asterisk.agitb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.config.html">asterisk.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.fastagi.html">asterisk.fastagi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.manager.html">asterisk.manager module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-asterisk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyst2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">asterisk</a></li>
+      <li class="breadcrumb-item active">asterisk package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/asterisk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="asterisk-package">
+<h1>asterisk package<a class="headerlink" href="#asterisk-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.agi.html">asterisk.agi module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#specification">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI"><code class="docutils literal notranslate"><span class="pre">AGI</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.answer"><code class="docutils literal notranslate"><span class="pre">AGI.answer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.appexec"><code class="docutils literal notranslate"><span class="pre">AGI.appexec()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.channel_status"><code class="docutils literal notranslate"><span class="pre">AGI.channel_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.control_stream_file"><code class="docutils literal notranslate"><span class="pre">AGI.control_stream_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.database_del"><code class="docutils literal notranslate"><span class="pre">AGI.database_del()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.database_deltree"><code class="docutils literal notranslate"><span class="pre">AGI.database_deltree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.database_get"><code class="docutils literal notranslate"><span class="pre">AGI.database_get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.database_put"><code class="docutils literal notranslate"><span class="pre">AGI.database_put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.exec_command"><code class="docutils literal notranslate"><span class="pre">AGI.exec_command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.execute"><code class="docutils literal notranslate"><span class="pre">AGI.execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.get_data"><code class="docutils literal notranslate"><span class="pre">AGI.get_data()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.get_full_variable"><code class="docutils literal notranslate"><span class="pre">AGI.get_full_variable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.get_option"><code class="docutils literal notranslate"><span class="pre">AGI.get_option()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.get_result"><code class="docutils literal notranslate"><span class="pre">AGI.get_result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.get_variable"><code class="docutils literal notranslate"><span class="pre">AGI.get_variable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.goto_on_exit"><code class="docutils literal notranslate"><span class="pre">AGI.goto_on_exit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.hangup"><code class="docutils literal notranslate"><span class="pre">AGI.hangup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.noop"><code class="docutils literal notranslate"><span class="pre">AGI.noop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.receive_char"><code class="docutils literal notranslate"><span class="pre">AGI.receive_char()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.record_file"><code class="docutils literal notranslate"><span class="pre">AGI.record_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_alpha"><code class="docutils literal notranslate"><span class="pre">AGI.say_alpha()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_date"><code class="docutils literal notranslate"><span class="pre">AGI.say_date()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_datetime"><code class="docutils literal notranslate"><span class="pre">AGI.say_datetime()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_digits"><code class="docutils literal notranslate"><span class="pre">AGI.say_digits()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_number"><code class="docutils literal notranslate"><span class="pre">AGI.say_number()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_phonetic"><code class="docutils literal notranslate"><span class="pre">AGI.say_phonetic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.say_time"><code class="docutils literal notranslate"><span class="pre">AGI.say_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.send_command"><code class="docutils literal notranslate"><span class="pre">AGI.send_command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.send_image"><code class="docutils literal notranslate"><span class="pre">AGI.send_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.send_text"><code class="docutils literal notranslate"><span class="pre">AGI.send_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_autohangup"><code class="docutils literal notranslate"><span class="pre">AGI.set_autohangup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_callerid"><code class="docutils literal notranslate"><span class="pre">AGI.set_callerid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_context"><code class="docutils literal notranslate"><span class="pre">AGI.set_context()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_extension"><code class="docutils literal notranslate"><span class="pre">AGI.set_extension()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_priority"><code class="docutils literal notranslate"><span class="pre">AGI.set_priority()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.set_variable"><code class="docutils literal notranslate"><span class="pre">AGI.set_variable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.stream_file"><code class="docutils literal notranslate"><span class="pre">AGI.stream_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.tdd_mode"><code class="docutils literal notranslate"><span class="pre">AGI.tdd_mode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.test_hangup"><code class="docutils literal notranslate"><span class="pre">AGI.test_hangup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.verbose"><code class="docutils literal notranslate"><span class="pre">AGI.verbose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGI.wait_for_digit"><code class="docutils literal notranslate"><span class="pre">AGI.wait_for_digit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIAppError"><code class="docutils literal notranslate"><span class="pre">AGIAppError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIDBError"><code class="docutils literal notranslate"><span class="pre">AGIDBError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIError"><code class="docutils literal notranslate"><span class="pre">AGIError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIException"><code class="docutils literal notranslate"><span class="pre">AGIException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIHangup"><code class="docutils literal notranslate"><span class="pre">AGIHangup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIInvalidCommand"><code class="docutils literal notranslate"><span class="pre">AGIInvalidCommand</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIResultHangup"><code class="docutils literal notranslate"><span class="pre">AGIResultHangup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGISIGHUPHangup"><code class="docutils literal notranslate"><span class="pre">AGISIGHUPHangup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGISIGPIPEHangup"><code class="docutils literal notranslate"><span class="pre">AGISIGPIPEHangup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIUnknownError"><code class="docutils literal notranslate"><span class="pre">AGIUnknownError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agi.html#asterisk.agi.AGIUsageError"><code class="docutils literal notranslate"><span class="pre">AGIUsageError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.agitb.html">asterisk.agitb module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#specification">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.Hook"><code class="docutils literal notranslate"><span class="pre">Hook</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.Hook.handle"><code class="docutils literal notranslate"><span class="pre">Hook.handle()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.enable"><code class="docutils literal notranslate"><span class="pre">enable()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.handler"><code class="docutils literal notranslate"><span class="pre">handler()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.lookup"><code class="docutils literal notranslate"><span class="pre">lookup()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.scanvars"><code class="docutils literal notranslate"><span class="pre">scanvars()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.agitb.html#asterisk.agitb.text"><code class="docutils literal notranslate"><span class="pre">text()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.config.html">asterisk.config module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#specification">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category"><code class="docutils literal notranslate"><span class="pre">Category</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category.append"><code class="docutils literal notranslate"><span class="pre">Category.append()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category.get_line"><code class="docutils literal notranslate"><span class="pre">Category.get_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category.insert"><code class="docutils literal notranslate"><span class="pre">Category.insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category.pop"><code class="docutils literal notranslate"><span class="pre">Category.pop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Category.remove"><code class="docutils literal notranslate"><span class="pre">Category.remove()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#asterisk.config.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Config.load"><code class="docutils literal notranslate"><span class="pre">Config.load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Config.parse"><code class="docutils literal notranslate"><span class="pre">Config.parse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#asterisk.config.Item"><code class="docutils literal notranslate"><span class="pre">Item</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Item.get_line"><code class="docutils literal notranslate"><span class="pre">Item.get_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Item.parse"><code class="docutils literal notranslate"><span class="pre">Item.parse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#asterisk.config.Line"><code class="docutils literal notranslate"><span class="pre">Line</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.config.html#asterisk.config.Line.get_line"><code class="docutils literal notranslate"><span class="pre">Line.get_line()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.config.html#asterisk.config.ParseError"><code class="docutils literal notranslate"><span class="pre">ParseError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.fastagi.html">asterisk.fastagi module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.fastagi.html#specification">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.fastagi.html#asterisk.fastagi.FastAGI"><code class="docutils literal notranslate"><span class="pre">FastAGI</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.fastagi.html#asterisk.fastagi.FastAGI.handle"><code class="docutils literal notranslate"><span class="pre">FastAGI.handle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.fastagi.html#asterisk.fastagi.FastAGI.timeout"><code class="docutils literal notranslate"><span class="pre">FastAGI.timeout</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="asterisk.manager.html">asterisk.manager module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#specification">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Event"><code class="docutils literal notranslate"><span class="pre">Event</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Event.get_action_id"><code class="docutils literal notranslate"><span class="pre">Event.get_action_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Event.get_header"><code class="docutils literal notranslate"><span class="pre">Event.get_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Event.has_header"><code class="docutils literal notranslate"><span class="pre">Event.has_header()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager"><code class="docutils literal notranslate"><span class="pre">Manager</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.absolute_timeout"><code class="docutils literal notranslate"><span class="pre">Manager.absolute_timeout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.close"><code class="docutils literal notranslate"><span class="pre">Manager.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.command"><code class="docutils literal notranslate"><span class="pre">Manager.command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.connect"><code class="docutils literal notranslate"><span class="pre">Manager.connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.connected"><code class="docutils literal notranslate"><span class="pre">Manager.connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.dbdel"><code class="docutils literal notranslate"><span class="pre">Manager.dbdel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.dbdeltree"><code class="docutils literal notranslate"><span class="pre">Manager.dbdeltree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.dbget"><code class="docutils literal notranslate"><span class="pre">Manager.dbget()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.dbput"><code class="docutils literal notranslate"><span class="pre">Manager.dbput()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.event_dispatch"><code class="docutils literal notranslate"><span class="pre">Manager.event_dispatch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.extension_state"><code class="docutils literal notranslate"><span class="pre">Manager.extension_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.get_actionID"><code class="docutils literal notranslate"><span class="pre">Manager.get_actionID()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.hangup"><code class="docutils literal notranslate"><span class="pre">Manager.hangup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.iaxregistry"><code class="docutils literal notranslate"><span class="pre">Manager.iaxregistry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.login"><code class="docutils literal notranslate"><span class="pre">Manager.login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.logoff"><code class="docutils literal notranslate"><span class="pre">Manager.logoff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.mailbox_count"><code class="docutils literal notranslate"><span class="pre">Manager.mailbox_count()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.mailbox_status"><code class="docutils literal notranslate"><span class="pre">Manager.mailbox_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.message_loop"><code class="docutils literal notranslate"><span class="pre">Manager.message_loop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.next_seq"><code class="docutils literal notranslate"><span class="pre">Manager.next_seq()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.originate"><code class="docutils literal notranslate"><span class="pre">Manager.originate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.originate_vars"><code class="docutils literal notranslate"><span class="pre">Manager.originate_vars</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.ping"><code class="docutils literal notranslate"><span class="pre">Manager.ping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.playdtmf"><code class="docutils literal notranslate"><span class="pre">Manager.playdtmf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.redirect"><code class="docutils literal notranslate"><span class="pre">Manager.redirect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.register_event"><code class="docutils literal notranslate"><span class="pre">Manager.register_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.reload"><code class="docutils literal notranslate"><span class="pre">Manager.reload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.send_action"><code class="docutils literal notranslate"><span class="pre">Manager.send_action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.sippeers"><code class="docutils literal notranslate"><span class="pre">Manager.sippeers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.sipshowpeer"><code class="docutils literal notranslate"><span class="pre">Manager.sipshowpeer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.sipshowregistry"><code class="docutils literal notranslate"><span class="pre">Manager.sipshowregistry()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.status"><code class="docutils literal notranslate"><span class="pre">Manager.status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.Manager.unregister_event"><code class="docutils literal notranslate"><span class="pre">Manager.unregister_event()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerAuthException"><code class="docutils literal notranslate"><span class="pre">ManagerAuthException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerException"><code class="docutils literal notranslate"><span class="pre">ManagerException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerMsg"><code class="docutils literal notranslate"><span class="pre">ManagerMsg</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerMsg.get_header"><code class="docutils literal notranslate"><span class="pre">ManagerMsg.get_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerMsg.has_header"><code class="docutils literal notranslate"><span class="pre">ManagerMsg.has_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerMsg.parse"><code class="docutils literal notranslate"><span class="pre">ManagerMsg.parse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="asterisk.manager.html#asterisk.manager.ManagerSocketException"><code class="docutils literal notranslate"><span class="pre">ManagerSocketException</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="module-asterisk">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-asterisk" title="Permalink to this heading"></a></h2>
+<p>pyst - A set of interfaces and libraries to allow programming of asterisk from python.</p>
+<p>The pyst project includes several python modules to assist in programming
+asterisk with python:</p>
+<p>agi     - python wrapper for agi
+agitb   - a module to assist in agi debugging, like cgitb
+config  - a module for parsing asterisk config files
+manager - a module for interacting with the asterisk manager interface</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="asterisk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asterisk.agi.html" class="btn btn-neutral float-right" title="asterisk.agi module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

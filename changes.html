@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History &mdash; pyst2 0.5.2.dev16 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="asterisk.manager module" href="api/asterisk.manager.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> pyst2
+          </a>
+              <div class="version">
+                0.5.2.dev16
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">pyst2: A Python Interface to Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">asterisk</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyst2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">History</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/changes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="history">
+<h1>History<a class="headerlink" href="#history" title="Permalink to this heading"></a></h1>
+<p>2019-08-08  Francesco Rana &lt;<a class="reference external" href="https://github.com/c1cc10">https://github.com/c1cc10</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixed send_command to work with python3 (by evilscientress )</p></li>
+<li><p>changed ‘async’ option name in manager.py due to the updated
+reserved words list in Python 3</p></li>
+</ul>
+</div></blockquote>
+<p>2016-11-04  VoiPCS &lt;<a class="reference external" href="https://github.com/VoIPCS">https://github.com/VoIPCS</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixing unicode bug in <cite>send_action</cite> for AMI.</p></li>
+</ul>
+</div></blockquote>
+<p>2016-02-16  Randall Degges &lt;<a class="reference external" href="https://github.com/rdegges">https://github.com/rdegges</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixing issue in AGI class init function. Thanks to &#64;sancho2934489 for the
+find!</p></li>
+</ul>
+</div></blockquote>
+<p>2015-11-16  Scinawa Antani &lt;<a class="reference external" href="https://github.com/Scinawa">https://github.com/Scinawa</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixing indentation errors.</p></li>
+</ul>
+</div></blockquote>
+<p>2015-11-14  Ben Davis &lt;<a class="reference external" href="https://github.com/tuxpowered">https://github.com/tuxpowered</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Handling more UTF-8 encoding issues in <cite>_quote</cite> method.</p></li>
+</ul>
+</div></blockquote>
+<p>2015-07-18  Artem Sorokin</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixing UTF-8 encoding issues.</p></li>
+</ul>
+</div></blockquote>
+<p>2015-07-15  Artem Sorokin</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fix multiline command end marker for OpenVox GSM Gateway.</p></li>
+</ul>
+</div></blockquote>
+<p>2015-03-31  Randall Degges</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Porting packaging to setuptools (modern).</p></li>
+<li><p>Adding six as a dependency (it was missing before).</p></li>
+</ul>
+</div></blockquote>
+<p>2015-03-30  Areski Belaid</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fixing the MANIFEST.in file I accidentally broke :)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>2015-03-29  Timur Tuchkovenko &lt;<a class="reference external" href="mailto:eill&#37;&#52;&#48;yandex&#46;ru">eill<span>&#64;</span>yandex<span>&#46;</span>ru</a>&gt;</dt><dd><ul class="simple">
+<li><p>UPGRADE: AMI fix for Python 3 compatibility.</p></li>
+</ul>
+</dd>
+<dt>2014-10-08  Timur Tuchkovenko &lt;<a class="reference external" href="mailto:eill&#37;&#52;&#48;yandex&#46;ru">eill<span>&#64;</span>yandex<span>&#46;</span>ru</a>&gt;</dt><dd><ul class="simple">
+<li><p>UPGRADE: initial Python 3 support. Now pyst2 requires
+Python ‘six’ module. Some minor changes in other files.</p></li>
+</ul>
+</dd>
+<dt>2014-09-14  Sp1tF1r3 &lt;<a class="reference external" href="https://github.com/Sp1tF1r3">https://github.com/Sp1tF1r3</a>&gt;</dt><dd><ul class="simple">
+<li><p>asterisk/manager.py: added action ‘Reload’ for Asterisk Manager
+Interface (AMI).</p></li>
+</ul>
+</dd>
+<dt>2013-12-03  Ludovic Gasc &lt;<a class="reference external" href="mailto:gmludo&#37;&#52;&#48;gmail&#46;com">gmludo<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</dt><dd><ul class="simple">
+<li><p>examples/agi_script.py: added example script to explain AGI
+functionality.</p></li>
+<li><p>README: renamed to REAMDE.rst for Github’s Markdown support.</p></li>
+<li><p>setup.py: minor changes.</p></li>
+</ul>
+</dd>
+<dt>2012-11-12  Arezqui Belaid &lt;<a class="reference external" href="mailto:areski&#37;&#52;&#48;gmail&#46;com">areski<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</dt><dd><ul class="simple">
+<li><p>asterisk/manager.py: minor empty line enhancements.</p></li>
+<li><p>examples/show_channels.py: added example script to show information via
+Asterisk Manager Interface (AMI).</p></li>
+</ul>
+</dd>
+<dt>2012-11-11  Arezqui Belaid &lt;<a class="reference external" href="mailto:areski&#37;&#52;&#48;gmail&#46;com">areski<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</dt><dd><ul class="simple">
+<li><p>PEP8 Fixes</p></li>
+</ul>
+</dd>
+<dt>2011-05-31  Randall Degges &lt;<a class="reference external" href="mailto:rdegges&#37;&#52;&#48;gmail&#46;com">rdegges<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</dt><dd><ul class="simple">
+<li><p>BUGFIX: Fixing issue that prevented manager.status command from returning
+proper output.</p></li>
+</ul>
+</dd>
+</dl>
+<p>2007-01-26  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/manager.py: Make get_header() functions work like
+dict.get().</p></li>
+<li><p>UPGRADE: Updated.</p></li>
+</ul>
+</div></blockquote>
+<p>2007-01-16  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/manager.py: Fix support for Manager.command(). Patch from
+Karl Putland &lt;<a class="reference external" href="mailto:karl&#37;&#52;&#48;klasstek&#46;com">karl<span>&#64;</span>klasstek<span>&#46;</span>com</a>&gt;.</p></li>
+</ul>
+</div></blockquote>
+<p>2007-01-02  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/agi.py (AGI.set_autohangup): Fixed syntax error.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-11-28  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>UPGRADE: Tweaked formatting.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-10-30  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ChangeLog: Fixed previous entry.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-10-30  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TODO: Updated.</p></li>
+<li><p>asterisk/agi.py (AGI.control_stream_file): Changed default skipms
+and quoted arguments.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-10-24  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/agi.py: Added get_variable_full command.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-10-18  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/agitb.py: Make error output default to sys.stderr instead
+of sys.stdout.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-09-19  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>debian/control: Removed XS-Python-Versions header to make it default
+to all python versions.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-09-19  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>setup.py: Updated version.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-09-19  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>debian/rules: Changed to use pysupport.</p></li>
+<li><p>debian/control: Changed to use pysupport and changed arch to all.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-09-19  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>MANIFEST.in: Added NEWS to manifest.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-09-19  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>debian/rules: Updated to reflect new python policy.</p></li>
+<li><p>debian/control: Updated to reflect new python policy.</p></li>
+<li><p>debian/changelog: Updated.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-08-23  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>UPGRADE: Updated.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-08-23  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/manager.py (unregister_event): Added.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-08-23  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>NEWS: Added.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-07-14  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>asterisk/agi.py (wait_for_digit): Only catch ValueError, not all
+exceptions.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-07-14  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>TODO: Updated.</p></li>
+<li><p>asterisk/agi.py (set_variable): Documentation changes.</p></li>
+<li><p>asterisk/agi.py (get_variable): Changed to return and empty string
+instead of throwing an exception when a channel variable is not set.</p></li>
+<li><p>UPGRADE: Added.</p></li>
+</ul>
+</div></blockquote>
+<p>2006-07-14  Matthew Nicholson  &lt;<a class="reference external" href="mailto:mnicholson&#37;&#52;&#48;digium&#46;com">mnicholson<span>&#64;</span>digium<span>&#46;</span>com</a>&gt;</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ChangeLog: Added.</p></li>
+<li><p>TODO: Added.</p></li>
+<li><p>MANIFEST.in: Added ChangeLog and TODO.</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/asterisk.manager.html" class="btn btn-neutral float-left" title="asterisk.manager module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+asterisk.config module
+======================
+
+.. automodule:: asterisk.config
+   :members:
+   :undoc-members:
+   :show-inheritance:

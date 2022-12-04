@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>asterisk.agitb module &mdash; pyst2 0.5.2.dev16 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="asterisk.config module" href="asterisk.config.html" />
+    <link rel="prev" title="asterisk.agi module" href="asterisk.agi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> pyst2
+          </a>
+              <div class="version">
+                0.5.2.dev16
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">pyst2: A Python Interface to Asterisk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">asterisk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="asterisk.html">asterisk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="asterisk.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="asterisk.agi.html">asterisk.agi module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">asterisk.agitb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.config.html">asterisk.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.fastagi.html">asterisk.fastagi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="asterisk.manager.html">asterisk.manager module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="asterisk.html#module-asterisk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyst2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">asterisk</a></li>
+          <li class="breadcrumb-item"><a href="asterisk.html">asterisk package</a></li>
+      <li class="breadcrumb-item active">asterisk.agitb module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/asterisk.agitb.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-asterisk.agitb">
+<span id="asterisk-agitb-module"></span><h1>asterisk.agitb module<a class="headerlink" href="#module-asterisk.agitb" title="Permalink to this heading"></a></h1>
+<span class="target" id="module-agitb"></span><section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+<p>To enable this module, do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asterisk.agitb</span><span class="o">,</span> <span class="nn">asterisk.agi</span>
+
+<span class="n">asterisk</span><span class="o">.</span><span class="n">agitb</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">logdir</span><span class="o">=</span><span class="s2">&quot;/var/log/asterisk/&quot;</span>
+<span class="p">)</span>
+
+<span class="n">agi</span> <span class="o">=</span> <span class="n">asterisk</span><span class="o">.</span><span class="n">agi</span><span class="o">.</span><span class="n">AGI</span><span class="p">()</span>
+<span class="n">asterisk</span><span class="o">.</span><span class="n">agitb</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">agi</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;/var/log/asterisk&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>at the top of your script.  The optional arguments to enable() are:</p>
+<ul class="simple">
+<li><p>agi         - the agi handle to write verbose messages to</p></li>
+<li><p>display     - if true, tracebacks are displayed on the asterisk console
+(used with the agi option)</p></li>
+<li><p>logdir      - if set, tracebacks are written to files in this directory</p></li>
+<li><p>context     - number of lines of source code to show for each stack frame</p></li>
+</ul>
+<p>By default, tracebacks are displayed but not saved, and the context is 5 lines.</p>
+<p>You may want to add a logdir if you call agitb.enable() before you have
+an agi.AGI() handle.</p>
+<p>Alternatively, if you have caught an exception and want agitb to display it
+for you, call agitb.handler().  The optional argument to handler() is a
+3-item tuple (etype, evalue, etb) just like the value of sys.exc_info().
+If you do not pass anything to handler() it will use sys.exc_info().</p>
+<p>This script was adapted from Ka-Ping Yee’s cgitb.</p>
+</section>
+<section id="specification">
+<h2>Specification<a class="headerlink" href="#specification" title="Permalink to this heading"></a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="asterisk.agitb.Hook">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">Hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#Hook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.Hook" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A hook to replace sys.excepthook that shows tracebacks in HTML.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="asterisk.agitb.Hook.handle">
+<span class="sig-name descname"><span class="pre">handle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#Hook.handle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.Hook.handle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="asterisk.agitb.enable">
+<span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#enable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.enable" title="Permalink to this definition"></a></dt>
+<dd><p>Install an exception handler that formats tracebacks as HTML.</p>
+<p>The optional argument ‘display’ can be set to 0 to suppress sending the
+traceback to the browser, and ‘logdir’ can be set to a directory to cause
+tracebacks to be written to files there.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="asterisk.agitb.handler">
+<span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#asterisk.agitb.handler" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="asterisk.agitb.lookup">
+<span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.lookup" title="Permalink to this definition"></a></dt>
+<dd><p>Find the value for a given name in the given environment.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="asterisk.agitb.scanvars">
+<span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">scanvars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#scanvars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.scanvars" title="Permalink to this definition"></a></dt>
+<dd><p>Scan one logical line of Python and look up values of variables used.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="asterisk.agitb.text">
+<span class="sig-prename descclassname"><span class="pre">asterisk.agitb.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eparams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/asterisk/agitb.html#text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#asterisk.agitb.text" title="Permalink to this definition"></a></dt>
+<dd><p>Return a plain text document describing a given traceback.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="asterisk.agi.html" class="btn btn-neutral float-left" title="asterisk.agi module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="asterisk.config.html" class="btn btn-neutral float-right" title="asterisk.config module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

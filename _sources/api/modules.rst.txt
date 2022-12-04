@@ -1,0 +1,7 @@
+asterisk
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   asterisk
